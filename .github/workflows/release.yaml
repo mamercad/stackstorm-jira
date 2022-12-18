@@ -4,8 +4,7 @@ on:
   push:
     branches:
       # the default branch
-      # - master
-      - python38
+      - master
 
 permissions:
   contents: write
