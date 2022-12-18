@@ -1,6 +1,9 @@
 name: CI
 
 on:
+  push:
+    branches:
+      - python38
   pull_request:
   schedule:
     # NOTE: We run this weekly at 1 am UTC on every Saturday
@@ -10,7 +13,8 @@ jobs:
   # This is mirrored in the release workflow.
   build_and_test:
     name: 'Build and Test'
-    uses: StackStorm-Exchange/ci/.github/workflows/pack-build_and_test.yaml@master
+    # uses: StackStorm-Exchange/ci/.github/workflows/pack-build_and_test.yaml@master
+    uses: mamercad/stackstorm-exchange-ci/.github/workflows/pack-build_and_test.yaml@python38
     with:
       enable-common-libs: true
       #apt-cache-version: v0
